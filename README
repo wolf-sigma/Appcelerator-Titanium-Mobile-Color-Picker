@@ -1,18 +1,20 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Titanium Color Picker (HSL Type)
+---
+///Currently only works on the iPhone///
+---
+primary files: colorpicker.js, images/*
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+Methods:
+createColorPicker();
+     Parameters:
+     hexColor - required. Used to set the initial color of the picker
 
+Events:
+colorselect - is triggered when user selects "select"
+Properties: 
+hexColor: hex color without hash character
+hexColorWithHash: hex color with hash character
+hslcolor: object {h: hue value, s: saturation value, l: luminosity value}
+rgbcolor: object {r: red value, g: green value: b: blue value}
 
-
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+selectcancel - is triggered when user selects "cancel"
