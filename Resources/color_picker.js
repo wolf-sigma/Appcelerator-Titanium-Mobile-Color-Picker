@@ -338,8 +338,15 @@ function createColorPicker(params) {
 	returnView.backgroundColor = rgbToHex(hslToRgb(h, s, l));
 	// place crosshairs
 	lCrossHair.left = (l * (LImage.width / 100)) + (10 - (lCrossHair.width / 2));
-	hsCrossHair.left = (h * (HSImage.width / 360)) + (HSImage.left - (hsCrossHair.width / 2));
-	hsCrossHair.top = (s * (HSImage.height / 100)) + (HSImage.top - (hsCrossHair.height / 2)) - 100;
+	if (l == 0 || l == 100) {
+			Ti.API.info('boom');
+			hsCrossHair.left = HSImage.width + HSImage.left - (hsCrossHair.width / 2);
+			hsCrossHair.top = HSImage.height + HSImage.top - (hsCrossHair.height / 2);
+	}
+	else {
+		hsCrossHair.left = (h * (HSImage.width / 360)) + (HSImage.left - (hsCrossHair.width / 2));
+		hsCrossHair.top = (s * (HSImage.height / 100)) + (HSImage.top - (hsCrossHair.height / 2)) - 100;
+	}
 	Ti.API.log(hsCrossHair.top);
     return returnView;
 };
