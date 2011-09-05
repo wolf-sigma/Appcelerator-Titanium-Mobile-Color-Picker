@@ -339,9 +339,8 @@ function createColorPicker(params) {
 	// place crosshairs
 	lCrossHair.left = (l * (LImage.width / 100)) + (10 - (lCrossHair.width / 2));
 	if (l == 0 || l == 100) {
-			Ti.API.info('boom');
-			hsCrossHair.left = HSImage.width + HSImage.left - (hsCrossHair.width / 2);
-			hsCrossHair.top = HSImage.height + HSImage.top - (hsCrossHair.height / 2);
+		hsCrossHair.left = HSImage.width + HSImage.left - (hsCrossHair.width / 2);
+		hsCrossHair.top = HSImage.height + HSImage.top - (hsCrossHair.height / 2);
 	}
 	else {
 		hsCrossHair.left = (h * (HSImage.width / 360)) + (HSImage.left - (hsCrossHair.width / 2));
